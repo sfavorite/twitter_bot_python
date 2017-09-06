@@ -20,12 +20,17 @@ twitter = Twython(
     access_token_secret
 )
 
+# First message
 message = 'Hi'
 
-twitter.update_status(status=message)
+# Send a twitter message
+#twitter.update_status(status=message)
 
-message = "New picture"
+# Message to post
+message = "Nature"
 
-photo = open("random.jpg", 'rb')
+# Picture to post 
+photo = open("nature.jpg", 'rb')
 
-twitter.update_status_with_media(status=message, media=photo)
+# Post message with media
+#twitter.update_status_with_media(status=message, media=photo)
