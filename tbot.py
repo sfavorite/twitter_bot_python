@@ -2,7 +2,17 @@
 
 from twython import Twython
 from dotenv import load_dotenv, find_dotenv
+import random
 import os
+
+
+# List of messages to choose from
+messages = [
+    "Hello",
+    "Bye",
+    "Okay",
+    "AI overlords"
+]
 
 # Load key, token, secrets from .env
 load_dotenv(find_dotenv())
@@ -29,7 +39,7 @@ message = 'Hi'
 # Message to post
 message = "Nature"
 
-# Picture to post 
+# Picture to post
 photo = open("nature.jpg", 'rb')
 
 # Post message with media
