@@ -44,3 +44,6 @@ photo = open("nature.jpg", 'rb')
 
 # Post message with media
 #twitter.update_status_with_media(status=message, media=photo)
+#print("Sent: {}".format(message));
+
+#message = random.choice(messages)
