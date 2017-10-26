@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from twython import Twython
+from twython import TwythonStreamer
 from dotenv import load_dotenv, find_dotenv
 import random
 import os
@@ -47,3 +48,23 @@ photo = open("nature.jpg", 'rb')
 #print("Sent: {}".format(message));
 
 #message = random.choice(messages)
+
+# Create a TwythonStreamer to read tweets
+class TwyStreamer(TwythonStreamer):
+
+    def on_success(self, data):
+        if 'text' in data:
+            username = data['user']['screen_name']
+            tweet = data['text']
+            print("@{}: {}".format(username, tweet))
+#        if 'text' in data:
+#            print(data['text'])
+
+stream = TwyStreamer(
+    consumer_key,
+    consumer_secret,
+    access_token,
+    access_token_secret
+)
+
+stream.statuses.filter(track='@realDonaldTrump')
